@@ -1,0 +1,17 @@
+[package]
+name = "srpack"
+version = "0.1.0"
+authors = ["ManShanko <deathage@gmail.com>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[profile.release]
+opt-level = "s"
+lto = "thin"
+
+[profile.release.package.flate2]
+opt-level = 2
+
+[dependencies]
+byteorder = "1.4.3"
+flate2 = { version = "1.0.24", features = ["zlib"], default-features = false }
